@@ -1,1 +1,1 @@
-export const MUSICNAME = "蒙宝宝-music狂欢";
+export const MUSICNAME = "蒙宝宝-I LOVE YOU!玫瑰玫瑰";
