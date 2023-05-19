@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+music-manage,music-client是前端
+music-server是后端，后端和前端都部署起来才能运行
