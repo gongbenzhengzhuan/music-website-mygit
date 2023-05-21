@@ -14,7 +14,7 @@ module.exports = defineConfig({
     config.plugin('define').tap(definitions => {
       Object.assign(definitions[0]['process.env'], {
         //NODE_HOST: '"http://localhost:8888"',
-        NODE_HOST: '"http://123.60.190.167:9001"',
+        NODE_HOST: '"http://82.156.135.173:9001"',
       });
       return definitions;
     });
