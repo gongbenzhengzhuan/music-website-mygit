@@ -13,7 +13,8 @@ export default defineComponent({
   setup() {
     const footerList = readonly([
       "关于 | 帮助 | 条款 | 反馈",
-      "Copyright © 2023 蒙宝宝",
+      "Copyright © 2023 dzl",
+      "京ICP备2023013015号 | https://beian.miit.gov.cn",
     ]);
 
     return { footerList };
