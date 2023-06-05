@@ -9,6 +9,7 @@
     <!--搜索框-->
     <div class="header-search">
       <el-input placeholder="搜索" :prefix-icon="Search" v-model="keywords" @keyup.enter="goSearch()" />
+      <yin-icon class="mask-icon" :icon="BOFANG"></yin-icon>
     </div>
     <!--设置-->
     <yin-header-nav v-if="!token" :styleList="signList" :activeName="activeNavName" @click="goPage"></yin-header-nav>
@@ -77,6 +78,14 @@ export default defineComponent({
     function goSearch() {
       if (keywords.value !== "") {
         proxy.$store.commit("setSearchWord", keywords.value);
+        console.log("searchword:+++++++++"+computed(() => store.getters.searchWord).value)
+        console.log("searchword:+++++++++"+store.getters.searchWord)
+        console.log("searchword:+++++++++"+store.getters.token)
+        proxy.$store.commit("setSongTitle", "http://www.baidu.com/");
+        console.log("songTitle:+++++++++"+store.getters.songTitle)
+        proxy.$store.commit("setUsername", "小蜜");
+        console.log("username:+++++++++"+store.getters.username)
+        console.log("music-name:+++++++++"+MUSICNAME)
         routerManager(RouterName.Search, { path: RouterName.Search, query: { keywords: keywords.value } });
       } else {
         (proxy as any).$message({
@@ -101,6 +110,7 @@ export default defineComponent({
       goMenuList,
       goSearch,
       attachImageUrl: HttpManager.attachImageUrl,
+      BOFANG: Icon.Dislike,
     };
   },
 });
@@ -160,6 +170,10 @@ export default defineComponent({
 
 .yin-header-nav {
   flex: 1;
+}
+
+.mask-icon {
+  @include icon(2em, rgba(240, 240, 240, 1));
 }
 
 /*搜索输入框*/
